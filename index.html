@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>아파트너 단지 광고 가이드</title>
+  <title>아파트너 단지 맞춤 광고 가이드 — 서울숲 아이파크리버포레1차</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,6 +14,7 @@
       --primary-light: #e8f1fd;
       --accent: #FF4757;
       --success: #2ed573;
+      --gold: #f0a500;
       --text: #1a1a2e;
       --text-sub: #555577;
       --border: #e0e0ef;
@@ -33,14 +34,13 @@
       line-height: 1.6;
     }
 
-    /* ── 공통 레이아웃 ── */
     .page {
       max-width: 900px;
       margin: 0 auto;
       padding: 40px 24px;
     }
 
-    /* ── 섹션 헤더 ── */
+    /* ── 섹션 공통 ── */
     .section {
       background: var(--white);
       border-radius: 12px;
@@ -120,11 +120,24 @@
       font-size: 12px;
       font-weight: 600;
       letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+
+    .cover-apt-name {
+      display: inline-block;
+      background: rgba(255,215,0,0.22);
+      border: 1px solid rgba(255,215,0,0.5);
+      border-radius: 8px;
+      padding: 6px 16px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #ffd700;
       margin-bottom: 20px;
+      letter-spacing: -0.3px;
     }
 
     .cover h1 {
-      font-size: 38px;
+      font-size: 36px;
       font-weight: 800;
       line-height: 1.2;
       letter-spacing: -1px;
@@ -136,7 +149,7 @@
     }
 
     .cover p.subtitle {
-      font-size: 16px;
+      font-size: 15px;
       color: rgba(255,255,255,0.8);
       margin-bottom: 40px;
     }
@@ -173,6 +186,13 @@
       margin-bottom: 20px;
     }
 
+    .stats-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
     .stat-card {
       background: var(--primary-light);
       border-radius: 10px;
@@ -192,6 +212,13 @@
       font-size: 11px;
       color: var(--text-sub);
       font-weight: 500;
+    }
+
+    .stat-card.gold {
+      background: #fff8e1;
+    }
+    .stat-card.gold .stat-val {
+      color: #c67c00;
     }
 
     /* ── 인포박스 ── */
@@ -314,7 +341,7 @@
 
     .app-header .apt-name {
       font-size: 10px;
-      opacity: 0.8;
+      opacity: 0.85;
     }
 
     .app-menu-grid {
@@ -339,7 +366,6 @@
       margin-bottom: 2px;
     }
 
-    /* 광고 존 공통 */
     .ad-zone {
       margin: 0 6px;
       border: 2px dashed var(--accent);
@@ -405,7 +431,6 @@
       border-bottom: 1px solid #f0f0f0;
     }
 
-    /* 와이어프레임 범례 */
     .wf-legend {
       flex: 1;
       min-width: 200px;
@@ -444,77 +469,366 @@
       line-height: 1.5;
     }
 
-    /* ── 패키지 카드 ── */
-    .package-grid {
+    /* ── 패키지 카드 (3종) ── */
+    .pkg3-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
       margin-top: 16px;
     }
 
-    .pkg-card {
-      border-radius: 10px;
+    .pkg3-card {
+      border-radius: 12px;
       overflow: hidden;
-      border: 1px solid var(--border);
+      border: 2px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.2s;
     }
 
-    .pkg-card.highlight {
+    .pkg3-card.best {
       border-color: var(--primary);
-      box-shadow: 0 4px 16px rgba(26,111,219,0.15);
+      box-shadow: 0 6px 24px rgba(26,111,219,0.18);
     }
 
-    .pkg-header {
-      background: var(--th-bg);
-      padding: 10px 12px;
+    .pkg3-card.premium {
+      border-color: #7b1fa2;
+      box-shadow: 0 6px 24px rgba(123,31,162,0.15);
+    }
+
+    .pkg3-header {
+      padding: 16px;
       text-align: center;
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .pkg-card.highlight .pkg-header {
-      background: var(--primary);
+      font-size: 15px;
+      font-weight: 800;
       color: white;
     }
 
-    .pkg-body {
-      padding: 12px;
-      text-align: center;
+    .pkg3-header.light { background: linear-gradient(135deg, #43a047, #1b5e20); }
+    .pkg3-header.standard { background: linear-gradient(135deg, #1A6FDB, #0e3f8a); }
+    .pkg3-header.premium-hd { background: linear-gradient(135deg, #7b1fa2, #4a148c); }
+
+    .pkg3-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 12px;
+      padding: 2px 10px;
+      font-size: 11px;
+      font-weight: 500;
+      margin-top: 4px;
     }
 
-    .pkg-price {
-      font-size: 20px;
+    .pkg3-body {
+      padding: 20px 16px;
+      flex: 1;
+    }
+
+    .pkg3-price-wrap {
+      text-align: center;
+      margin-bottom: 14px;
+    }
+
+    .pkg3-original {
+      font-size: 12px;
+      color: #aaa;
+      text-decoration: line-through;
+      margin-bottom: 2px;
+    }
+
+    .pkg3-price {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1;
+    }
+
+    .pkg3-price.green { color: #2e7d32; }
+    .pkg3-price.purple { color: #7b1fa2; }
+
+    .pkg3-price span {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-sub);
+    }
+
+    .pkg3-discount-badge {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 12px;
+      margin-top: 4px;
+    }
+
+    .pkg3-period {
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-sub);
+      margin-bottom: 14px;
+    }
+
+    .pkg3-includes {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .pkg3-includes li {
+      font-size: 12px;
+      display: flex;
+      gap: 6px;
+      align-items: flex-start;
+    }
+
+    .pkg3-includes li::before {
+      content: '✓';
+      color: var(--primary);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .pkg3-bonus {
+      background: #fffde7;
+      border: 1px solid #ffe082;
+      border-radius: 8px;
+      padding: 10px 12px;
+      margin-top: 12px;
+      font-size: 11.5px;
+      color: #c67c00;
+      font-weight: 600;
+    }
+
+    .pkg3-bonus .bonus-title {
+      font-weight: 800;
+      margin-bottom: 4px;
+      color: #b85c00;
+    }
+
+    .pkg3-bonus ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .pkg3-bonus ul li::before {
+      content: '🎁 ';
+    }
+
+    /* ── 진료과 마케팅비 ── */
+    .dept-bar-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .dept-bar-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dept-bar-name {
+      width: 70px;
+      font-size: 12px;
+      font-weight: 600;
+      flex-shrink: 0;
+      text-align: right;
+    }
+
+    .dept-bar-track {
+      flex: 1;
+      background: #eee;
+      border-radius: 20px;
+      height: 22px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dept-bar-fill {
+      height: 100%;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+      font-size: 10px;
+      font-weight: 700;
+      color: white;
+      white-space: nowrap;
+    }
+
+    .dept-bar-aptner {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      background: rgba(255,255,255,0.35);
+      border-right: 2px dashed white;
+      display: flex;
+      align-items: center;
+      padding: 0 6px;
+    }
+
+    .dept-bar-meta {
+      font-size: 11px;
+      color: var(--text-sub);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ── CPC 비교 바 ── */
+    .compare-bar-wrap {
+      margin: 12px 0;
+    }
+
+    .compare-bar-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .compare-bar-label {
+      width: 100px;
+      font-size: 12px;
+      font-weight: 600;
+      flex-shrink: 0;
+      text-align: right;
+    }
+
+    .compare-bar-track {
+      flex: 1;
+      background: #eee;
+      border-radius: 20px;
+      height: 14px;
+      overflow: hidden;
+    }
+
+    .compare-bar-fill {
+      height: 100%;
+      border-radius: 20px;
+    }
+
+    .compare-bar-val {
+      font-size: 11px;
+      font-weight: 700;
+      white-space: nowrap;
+      min-width: 90px;
+      text-align: left;
+    }
+
+    /* ── ROI 시뮬레이션 ── */
+    .roi-flow {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      flex-wrap: wrap;
+      margin: 16px 0;
+    }
+
+    .roi-step {
+      flex: 1;
+      min-width: 100px;
+      background: var(--primary-light);
+      border-radius: 10px;
+      padding: 14px 10px;
+      text-align: center;
+      position: relative;
+    }
+
+    .roi-step + .roi-step {
+      margin-left: 20px;
+    }
+
+    .roi-step + .roi-step::before {
+      content: '→';
+      position: absolute;
+      left: -18px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 16px;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .roi-step .rs-val {
+      font-size: 18px;
       font-weight: 800;
       color: var(--primary);
       line-height: 1;
       margin-bottom: 4px;
     }
 
-    .pkg-price span {
-      font-size: 12px;
-      font-weight: 500;
+    .roi-step .rs-label {
+      font-size: 11px;
       color: var(--text-sub);
     }
 
-    .pkg-discount {
-      display: inline-block;
-      background: #ff4757;
+    .roi-step.highlight-step {
+      background: linear-gradient(135deg, #1A6FDB, #0e3f8a);
+    }
+
+    .roi-step.highlight-step .rs-val {
       color: white;
-      font-size: 10px;
-      font-weight: 700;
-      padding: 1px 6px;
+    }
+
+    .roi-step.highlight-step .rs-label {
+      color: rgba(255,255,255,0.75);
+    }
+
+    /* ── 입주민 혜택 ── */
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .benefit-card {
       border-radius: 10px;
+      padding: 18px;
+      border: 1.5px solid;
+    }
+
+    .benefit-card.badge-card {
+      background: #e8f1fd;
+      border-color: var(--primary);
+    }
+
+    .benefit-card.coupon-card {
+      background: #fff8e1;
+      border-color: #f0a500;
+    }
+
+    .benefit-card.tab-card {
+      background: #e8f5e9;
+      border-color: #43a047;
+    }
+
+    .benefit-card.review-card {
+      background: #f3e5f5;
+      border-color: #7b1fa2;
+    }
+
+    .benefit-card h4 {
+      font-size: 14px;
+      font-weight: 800;
       margin-bottom: 8px;
     }
 
-    .pkg-includes {
-      font-size: 11px;
+    .benefit-card.badge-card h4 { color: var(--primary-dark); }
+    .benefit-card.coupon-card h4 { color: #c67c00; }
+    .benefit-card.tab-card h4 { color: #2e7d32; }
+    .benefit-card.review-card h4 { color: #7b1fa2; }
+
+    .benefit-card p {
+      font-size: 12.5px;
       color: var(--text-sub);
       line-height: 1.6;
     }
-
-    /* ── 진료과 별점 ── */
-    .star { color: #ffd32a; }
-    .star-empty { color: #ddd; }
 
     /* ── 강조 박스 ── */
     .highlight-box {
@@ -538,6 +852,19 @@
       padding: 12px 16px;
       margin: 12px 0;
       font-size: 13px;
+    }
+
+    .gold-box {
+      background: #fffde7;
+      border-left: 4px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      padding: 12px 16px;
+      margin: 12px 0;
+      font-size: 13px;
+    }
+
+    .gold-box strong {
+      color: #b85c00;
     }
 
     /* ── 영업 프로세스 ── */
@@ -598,43 +925,6 @@
     .step-content p {
       font-size: 12px;
       color: var(--text-sub);
-    }
-
-    /* ── 영업 포인트 ── */
-    .sales-points {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-
-    .sales-point {
-      background: var(--primary-light);
-      border-radius: 8px;
-      padding: 12px;
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-    }
-
-    .sales-point .sp-num {
-      background: var(--primary);
-      color: white;
-      border-radius: 50%;
-      width: 22px;
-      height: 22px;
-      font-size: 11px;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .sales-point .sp-text {
-      font-size: 12.5px;
-      font-weight: 600;
-      color: var(--primary-dark);
-      line-height: 1.4;
     }
 
     /* ── 배너 가이드 ── */
@@ -717,25 +1007,10 @@
       padding: 14px;
     }
 
-    .guide-item.required {
-      background: #e8f5e9;
-      border: 1px solid #a5d6a7;
-    }
-
-    .guide-item.forbidden {
-      background: #fff0f0;
-      border: 1px solid #ffcccc;
-    }
-
-    .guide-item.recommended {
-      background: #e3f2fd;
-      border: 1px solid #90caf9;
-    }
-
-    .guide-item.format {
-      background: #fafafa;
-      border: 1px solid var(--border);
-    }
+    .guide-item.required { background: #e8f5e9; border: 1px solid #a5d6a7; }
+    .guide-item.forbidden { background: #fff0f0; border: 1px solid #ffcccc; }
+    .guide-item.recommended { background: #e3f2fd; border: 1px solid #90caf9; }
+    .guide-item.format { background: #fafafa; border: 1px solid var(--border); }
 
     .guide-item h4 {
       font-size: 12px;
@@ -767,43 +1042,45 @@
     .guide-item.recommended ul li::before { content: '★'; color: #1565c0; }
     .guide-item.format ul li::before { content: '•'; color: var(--text-sub); }
 
-    /* ── 효과 비교 ── */
-    .compare-bar-wrap {
-      margin: 12px 0;
-    }
+    /* ── 별점 ── */
+    .star { color: #ffd32a; }
+    .star-empty { color: #ddd; }
 
-    .compare-bar-item {
-      display: flex;
-      align-items: center;
+    /* ── 영업 포인트 ── */
+    .sales-points {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 10px;
-      margin-bottom: 8px;
     }
 
-    .compare-bar-label {
-      width: 80px;
-      font-size: 12px;
-      font-weight: 600;
-      flex-shrink: 0;
-      text-align: right;
+    .sales-point {
+      background: var(--primary-light);
+      border-radius: 8px;
+      padding: 12px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
     }
 
-    .compare-bar-track {
-      flex: 1;
-      background: #eee;
-      border-radius: 20px;
-      height: 12px;
-      overflow: hidden;
-    }
-
-    .compare-bar-fill {
-      height: 100%;
-      border-radius: 20px;
-    }
-
-    .compare-bar-val {
+    .sales-point .sp-num {
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      width: 22px;
+      height: 22px;
       font-size: 11px;
       font-weight: 700;
-      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .sales-point .sp-text {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--primary-dark);
+      line-height: 1.4;
     }
 
     /* ── 푸터 ── */
@@ -833,87 +1110,111 @@
        1. 표지
   ══════════════════════════════════════ -->
   <div class="cover">
-    <div class="cover-badge">🏢 아파트너 광고 상품 안내서</div>
-    <h1>아파트너<br><span>단지 광고 가이드</span></h1>
-    <p class="subtitle">아파트 입주민 대상 병원 배너 광고 상품 안내</p>
+    <div class="cover-badge">🏢 아파트너 단지 맞춤 광고 가이드 v2</div>
+    <div class="cover-apt-name">🏙️ 서울숲 아이파크리버포레1차 전용</div>
+    <h1>입주민을 고객으로,<br><span>단지 맞춤 병원 광고</span></h1>
+    <p class="subtitle">우리 단지 852세대가 매일 여는 앱 — 반경 1km 병원의 새로운 마케팅 채널</p>
     <div class="cover-meta">
       <div class="cover-meta-item">
-        <span class="label">작성 부서</span>
-        <span class="value">두꺼비세상 AX팀</span>
+        <span class="label">단지</span>
+        <span class="value">서울숲 아이파크리버포레1차</span>
       </div>
       <div class="cover-meta-item">
-        <span class="label">배포 일자</span>
-        <span class="value">2026.04</span>
+        <span class="label">위치</span>
+        <span class="value">서울 성동구 응봉동</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="label">세대수</span>
+        <span class="value">1,002세대 (2021년 입주)</span>
       </div>
       <div class="cover-meta-item">
         <span class="label">버전</span>
-        <span class="value">v1.0</span>
-      </div>
-      <div class="cover-meta-item">
-        <span class="label">타깃 업종</span>
-        <span class="value">병원·의원·한의원</span>
+        <span class="value">v2.0 · 2026.04</span>
       </div>
     </div>
   </div>
 
   <!-- ══════════════════════════════════════
-       2. 아파트너 앱 현황
+       2. 단지 프로필 & 활성도
   ══════════════════════════════════════ -->
   <div class="section">
     <div class="section-header">
       <div class="num">2</div>
-      <h2>아파트너 앱 현황</h2>
+      <h2>단지 프로필 — 서울숲 아이파크리버포레1차</h2>
     </div>
     <div class="section-body">
-      <p style="font-size:13.5px; margin-bottom:16px; color:var(--text-sub);">
-        <strong style="color:var(--text);">아파트너</strong>는 아파트 단지별 커뮤니티·관리 플랫폼으로,
-        단지마다 전용 앱 화면을 제공하여 입주민이 매일 공지·택배·방문차량을 확인하는 생활 필수 앱입니다.
-      </p>
 
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-val">35~45%</div>
-          <div class="stat-label">DAU/MAU 비율<br><small>(일반 앱 평균 대비 2~3배)</small></div>
+      <!-- 기본 정보 -->
+      <div style="background:#f0f4ff; border-radius:10px; padding:16px 20px; margin-bottom:20px; display:flex; gap:32px; flex-wrap:wrap; align-items:center;">
+        <div>
+          <div style="font-size:11px; color:var(--text-sub); margin-bottom:2px;">📍 위치</div>
+          <div style="font-weight:700; font-size:14px;">서울 성동구 응봉동</div>
         </div>
-        <div class="stat-card">
-          <div class="stat-val">3~5회</div>
-          <div class="stat-label">하루 평균 세션<br><small>회당 2~3분 체류</small></div>
+        <div>
+          <div style="font-size:11px; color:var(--text-sub); margin-bottom:2px;">🏠 세대수</div>
+          <div style="font-weight:700; font-size:14px;">1,002세대</div>
         </div>
-        <div class="stat-card">
-          <div class="stat-val">70~85%</div>
-          <div class="stat-label">세대 가입률<br><small>단지 평균</small></div>
+        <div>
+          <div style="font-size:11px; color:var(--text-sub); margin-bottom:2px;">📅 입주연도</div>
+          <div style="font-weight:700; font-size:14px;">2021년</div>
+        </div>
+        <div>
+          <div style="font-size:11px; color:var(--text-sub); margin-bottom:2px;">👨‍👩‍👧 주요 연령대</div>
+          <div style="font-weight:700; font-size:14px;">30~50대 (맞벌이 + 어린 자녀 가정 多)</div>
         </div>
       </div>
 
+      <!-- 앱 활성도 수치 -->
+      <h3 style="font-size:14px; font-weight:700; margin-bottom:12px; color:var(--primary);">📊 아파트너 앱 활성도 (단지 추정치)</h3>
+
       <div class="stats-grid">
         <div class="stat-card">
-          <div class="stat-val">60~90회</div>
-          <div class="stat-label">월 평균 PV<br><small>세대당</small></div>
+          <div class="stat-val">852세대</div>
+          <div class="stat-label">앱 설치 세대<br><small>전체의 85%</small></div>
         </div>
         <div class="stat-card">
-          <div class="stat-val">7~9시</div>
-          <div class="stat-label">주 이용 시간 ①<br><small>오전 (출근 전)</small></div>
+          <div class="stat-val">720세대</div>
+          <div class="stat-label">MAU (월간 활성)<br><small>전체의 72%</small></div>
         </div>
         <div class="stat-card">
-          <div class="stat-val">18~21시</div>
-          <div class="stat-label">주 이용 시간 ②<br><small>오후 (퇴근 후)</small></div>
+          <div class="stat-val">310명</div>
+          <div class="stat-label">DAU (일간 활성)<br><small>전체의 31%</small></div>
+        </div>
+      </div>
+
+      <div class="stats-grid-4">
+        <div class="stat-card gold">
+          <div class="stat-val">43%</div>
+          <div class="stat-label">DAU/MAU 비율<br><small>업계 상위 수준</small></div>
+        </div>
+        <div class="stat-card gold">
+          <div class="stat-val">3.8회</div>
+          <div class="stat-label">일 평균 세션<br><small>세대당</small></div>
+        </div>
+        <div class="stat-card gold">
+          <div class="stat-val">82,000회</div>
+          <div class="stat-label">월 총 PV<br><small>단지 전체</small></div>
+        </div>
+        <div class="stat-card gold">
+          <div class="stat-val">7~9시<br>18~21시</div>
+          <div class="stat-label">주 이용 시간대<br><small>출퇴근 전후</small></div>
         </div>
       </div>
 
       <div class="highlight-box" style="margin-top:16px;">
-        <strong>🎯 타깃 인구</strong><br>
-        30~50대 가구주 · 주부 · 고소득 아파트 거주자 — 의료 소비력이 가장 높은 핵심 계층
+        <strong>🎯 광고주에게 의미하는 것</strong><br>
+        하루 310명이 직접 앱을 열어보는 단지 — <strong>내 병원 반경 1km 이내 실제 거주 세대</strong>에게만 노출하는 초정밀 타깃팅. 월 82,000 PV 중 병원 배너가 함께 노출됩니다.
       </div>
     </div>
   </div>
 
   <!-- ══════════════════════════════════════
-       3. 배너 광고 위치 (와이어프레임)
+       3. 배너 위치 와이어프레임
   ══════════════════════════════════════ -->
   <div class="section">
     <div class="section-header">
       <div class="num">3</div>
-      <h2>배너 광고 위치 — 와이어프레임</h2>
+      <h2>배너 광고 위치 — 와이어프레임 (A/B/C/D존)</h2>
     </div>
     <div class="section-body">
       <div class="wireframe-wrapper">
@@ -927,50 +1228,45 @@
             </div>
             <div class="app-header">
               <div style="font-size:13px; font-weight:800;">아파트너</div>
-              <div class="apt-name">래미안 ○○단지</div>
+              <div class="apt-name">서울숲 아이파크리버포레1차</div>
             </div>
 
-            <!-- 메뉴 그리드 -->
             <div class="app-menu-grid">
               <div class="app-menu-item"><span class="icon">🚗</span>방문차량</div>
               <div class="app-menu-item"><span class="icon">📦</span>택배</div>
               <div class="app-menu-item"><span class="icon">📢</span>공지사항</div>
               <div class="app-menu-item"><span class="icon">💬</span>커뮤니티</div>
               <div class="app-menu-item"><span class="icon">🏠</span>관리비</div>
-              <div class="app-menu-item"><span class="icon">⚙️</span>설정</div>
+              <div class="app-menu-item"><span class="icon">🏥</span>제휴병원</div>
             </div>
 
             <!-- A존 -->
             <div class="ad-zone zone-a-block" style="margin-top:4px;">
               <div class="ad-zone-label">🔴 A존 (프리미엄) 320×100</div>
-              <div class="ad-zone-inner">프리미엄 배너 광고</div>
+              <div class="ad-zone-inner">프리미엄 배너</div>
             </div>
 
-            <!-- 방문차량/커뮤니티 바 -->
             <div class="app-bar">
               <span>🚗 오늘 방문차량 3대</span>
-              <span>💬 오늘 게시글 12</span>
+              <span>💬 게시글 12</span>
             </div>
 
             <!-- B존 -->
             <div class="ad-zone zone-b-block">
               <div class="ad-zone-label">🟠 B존 (스탠다드) 320×100</div>
-              <div class="ad-zone-inner">스탠다드 배너 광고</div>
+              <div class="ad-zone-inner">스탠다드 배너</div>
             </div>
 
-            <!-- 공지사항 -->
             <div class="app-section-title">📢 공지사항</div>
             <div class="app-notice-item">• 엘리베이터 점검 안내 (4/3)</div>
             <div class="app-notice-item">• 주차장 도색 공사 안내</div>
-            <div class="app-notice-item">• 재활용 분리수거 변경</div>
 
             <!-- C존 -->
             <div class="ad-zone zone-c-block" style="margin-top:4px;">
               <div class="ad-zone-label">🟢 C존 (라이트) 320×80</div>
-              <div class="ad-zone-inner">라이트 배너 광고</div>
+              <div class="ad-zone-inner">라이트 배너</div>
             </div>
 
-            <!-- 단지소통 -->
             <div class="app-section-title">🏘️ 단지소통</div>
             <div class="app-community">• 분리수거 해주세요 (12분 전)</div>
             <div class="app-community">• 고양이 찾습니다 (1시간 전)</div>
@@ -987,8 +1283,8 @@
               <div class="zone-title">🔴 A존 — 프리미엄</div>
               <div class="zone-desc">
                 메인 홈 상단, 메뉴 그리드 바로 아래<br>
-                규격: 풀폭 배너 <strong>320×100px</strong><br>
-                1일 노출: 세대수 × 0.4 × 4회 = 최고 노출
+                규격: <strong>320×100px</strong> · 1일 4~5회 노출<br>
+                → 프리미엄·스탠다드 패키지 포함
               </div>
             </div>
           </div>
@@ -998,8 +1294,8 @@
               <div class="zone-title">🟠 B존 — 스탠다드</div>
               <div class="zone-desc">
                 메인 홈 중간, 공지사항 위/아래<br>
-                규격: 카드형 배너 <strong>320×100px</strong><br>
-                현 게임광고 자리 → 병원으로 교체
+                규격: <strong>320×100px</strong> · 메인 피드<br>
+                → 전 패키지(라이트 포함) 포함
               </div>
             </div>
           </div>
@@ -1009,8 +1305,8 @@
               <div class="zone-title">🟢 C존 — 라이트</div>
               <div class="zone-desc">
                 커뮤니티·게시판 피드 사이<br>
-                규격: 네이티브형 <strong>320×80px</strong><br>
-                자연스러운 피드 삽입 형태
+                규격: <strong>320×80px</strong> · 네이티브 피드형<br>
+                → 프리미엄 패키지 포함
               </div>
             </div>
           </div>
@@ -1020,8 +1316,8 @@
               <div class="zone-title">🟣 D존 — 팝업</div>
               <div class="zone-desc">
                 앱 진입 시 풀스크린 팝업<br>
-                규격: <strong>풀스크린</strong><br>
-                월 1~2회 한정 (고임팩트)
+                규격: <strong>풀스크린</strong> · 월 1회 한정<br>
+                → 프리미엄 패키지 포함 (고임팩트)
               </div>
             </div>
           </div>
@@ -1031,282 +1327,335 @@
   </div>
 
   <!-- ══════════════════════════════════════
-       4. 광고 단가표
+       4. 광고 상품 3종
   ══════════════════════════════════════ -->
   <div class="section">
     <div class="section-header">
       <div class="num">4</div>
-      <h2>광고 단가표</h2>
+      <h2>광고 상품 3종 — 서울숲 아이파크리버포레1차 맞춤 패키지</h2>
     </div>
     <div class="section-body">
 
-      <!-- 위치별 단가 -->
-      <h3 style="font-size:14px; font-weight:700; margin-bottom:12px; color:var(--primary);">📊 위치별 월 단가 (1개 단지 기준)</h3>
-      <table>
+      <div class="pkg3-grid">
+
+        <!-- 상품 A: 라이트 -->
+        <div class="pkg3-card">
+          <div class="pkg3-header light">
+            🌱 상품 A — 라이트<br>
+            <span class="pkg3-tag">소규모 의원</span>
+          </div>
+          <div class="pkg3-body">
+            <div class="pkg3-price-wrap">
+              <div class="pkg3-price green">45<span>만원</span></div>
+              <div style="font-size:11px; color:var(--text-sub); margin-top:4px;">월 15만원 × 3개월 (VAT별도)</div>
+            </div>
+            <div class="pkg3-period">📅 계약 기간: <strong>3개월</strong></div>
+            <ul class="pkg3-includes">
+              <li>B존 배너 1개</li>
+              <li>월 노출 약 80,000회</li>
+              <li>예상 CTR 0.5~1.0%</li>
+              <li>월 예상 클릭 400~800회</li>
+            </ul>
+            <div class="pkg3-bonus">
+              <div class="bonus-title">🎁 입주민 전용 보너스</div>
+              <ul>
+                <li>우리단지 제휴병원 뱃지</li>
+                <li>입주민 할인쿠폰 1종</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 상품 B: 스탠다드 -->
+        <div class="pkg3-card best">
+          <div class="pkg3-header standard">
+            ⭐ 상품 B — 스탠다드<br>
+            <span class="pkg3-tag">★ 추천 · 일반 의원</span>
+          </div>
+          <div class="pkg3-body">
+            <div class="pkg3-price-wrap">
+              <div class="pkg3-original">90만원</div>
+              <div class="pkg3-price">81<span>만원</span></div>
+              <div><span class="pkg3-discount-badge">10% 할인</span></div>
+              <div style="font-size:11px; color:var(--text-sub); margin-top:4px;">월 30만원 × 3개월 (VAT별도)</div>
+            </div>
+            <div class="pkg3-period">📅 계약 기간: <strong>3개월</strong></div>
+            <ul class="pkg3-includes">
+              <li>A존 + B존 배너</li>
+              <li>월 노출 약 200,000회</li>
+              <li>월 예상 클릭 1,400회</li>
+              <li>CPC 약 214원</li>
+            </ul>
+            <div class="pkg3-bonus">
+              <div class="bonus-title">🎁 입주민 전용 보너스</div>
+              <ul>
+                <li>우리단지 제휴병원 뱃지</li>
+                <li>입주민 할인쿠폰 2종</li>
+                <li>월 1회 성과 리포트</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 상품 C: 프리미엄 -->
+        <div class="pkg3-card premium">
+          <div class="pkg3-header premium-hd">
+            👑 상품 C — 프리미엄<br>
+            <span class="pkg3-tag">중형 병원·종합의원</span>
+          </div>
+          <div class="pkg3-body">
+            <div class="pkg3-price-wrap">
+              <div class="pkg3-original">300만원</div>
+              <div class="pkg3-price purple">255<span>만원</span></div>
+              <div><span class="pkg3-discount-badge">15% 할인</span></div>
+              <div style="font-size:11px; color:var(--text-sub); margin-top:4px;">월 50만원 × 6개월 (VAT별도)</div>
+            </div>
+            <div class="pkg3-period">📅 계약 기간: <strong>6개월</strong></div>
+            <ul class="pkg3-includes">
+              <li>A존 + B존 + C존 배너</li>
+              <li>월 1회 D존 팝업 추가</li>
+              <li>월 노출 약 320,000회+</li>
+              <li>커뮤니티 건강정보 게시</li>
+            </ul>
+            <div class="pkg3-bonus">
+              <div class="bonus-title">🎁 입주민 전용 보너스</div>
+              <ul>
+                <li>우리단지 제휴병원 뱃지</li>
+                <li>입주민 할인쿠폰 3종</li>
+                <li>주 1회 성과 리포트</li>
+                <li>커뮤니티 건강정보 게시</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="gold-box" style="margin-top:20px;">
+        <strong>💡 패키지 선택 가이드</strong><br>
+        처음 집행하는 의원 → <strong>상품 A (라이트)</strong>로 효과 검증 후 업그레이드 권장.<br>
+        이미 다른 광고 채널 운영 중인 의원 → <strong>상품 B (스탠다드)</strong>로 입주민 타깃 추가.<br>
+        2개 이상 단지 묶어서 집행 시 추가 협의 할인 가능.
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       5. 진료과별 마케팅비 비교
+  ══════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="num">5</div>
+      <h2>진료과별 마케팅비 비교 — 아파트너가 차지하는 비중</h2>
+    </div>
+    <div class="section-body">
+
+      <p style="font-size:13px; color:var(--text-sub); margin-bottom:16px;">
+        출처: 치의신보, 국세청 업종별 신고 현황 등 추정 · 병원 마케팅비 = 연매출의 <strong style="color:var(--text);">5~15% (적정 10%)</strong>
+      </p>
+
+      <table style="margin-bottom:20px;">
         <thead>
           <tr>
-            <th>위치</th>
-            <th>규격</th>
-            <th>1,000세대</th>
-            <th>2,000세대</th>
-            <th>3,000세대+</th>
+            <th>진료과</th>
+            <th>평균 연매출</th>
+            <th>적정 월 마케팅비</th>
+            <th>아파트너 라이트<br>(월 15만원)</th>
+            <th>아파트너 스탠다드<br>(월 30만원)</th>
+            <th>비중</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>🦷 치과</td>
+            <td>약 7.4억</td>
+            <td>60~120만원</td>
+            <td style="color:#2e7d32; font-weight:700;">25%</td>
+            <td style="color:#1A6FDB; font-weight:700;">25~50%</td>
+            <td><span style="background:#e8f5e9; color:#2e7d32; border-radius:4px; padding:2px 6px; font-size:11px; font-weight:700;">충분히 가능</span></td>
+          </tr>
+          <tr>
+            <td>💊 내과</td>
+            <td>약 5.5억</td>
+            <td>45~90만원</td>
+            <td style="color:#2e7d32; font-weight:700;">33%</td>
+            <td style="color:#1A6FDB; font-weight:700;">33~67%</td>
+            <td><span style="background:#e8f5e9; color:#2e7d32; border-radius:4px; padding:2px 6px; font-size:11px; font-weight:700;">충분히 가능</span></td>
+          </tr>
+          <tr>
+            <td>🍼 소아과</td>
+            <td>약 4.8억</td>
+            <td>40~80만원</td>
+            <td style="color:#2e7d32; font-weight:700;">38%</td>
+            <td style="color:#1A6FDB; font-weight:700;">38~75%</td>
+            <td><span style="background:#e8f5e9; color:#2e7d32; border-radius:4px; padding:2px 6px; font-size:11px; font-weight:700;">충분히 가능</span></td>
+          </tr>
+          <tr>
+            <td>✨ 피부과</td>
+            <td>약 8.5억</td>
+            <td>70~140만원</td>
+            <td style="color:#2e7d32; font-weight:700;">21%</td>
+            <td style="color:#1A6FDB; font-weight:700;">21~43%</td>
+            <td><span style="background:#e8f5e9; color:#2e7d32; border-radius:4px; padding:2px 6px; font-size:11px; font-weight:700;">충분히 가능</span></td>
+          </tr>
+          <tr>
+            <td>🦴 정형외과</td>
+            <td>약 6.2억</td>
+            <td>50~100만원</td>
+            <td style="color:#2e7d32; font-weight:700;">30%</td>
+            <td style="color:#1A6FDB; font-weight:700;">30~60%</td>
+            <td><span style="background:#e8f5e9; color:#2e7d32; border-radius:4px; padding:2px 6px; font-size:11px; font-weight:700;">충분히 가능</span></td>
+          </tr>
+          <tr>
+            <td>🌿 한의원</td>
+            <td>약 4.6억</td>
+            <td>38~75만원</td>
+            <td style="color:#2e7d32; font-weight:700;">40%</td>
+            <td style="color:#1A6FDB; font-weight:700;">40~79%</td>
+            <td><span style="background:#e8f5e9; color:#2e7d32; border-radius:4px; padding:2px 6px; font-size:11px; font-weight:700;">충분히 가능</span></td>
+          </tr>
+          <tr>
+            <td>👁️ 안과</td>
+            <td>약 7.8억</td>
+            <td>65~130만원</td>
+            <td style="color:#2e7d32; font-weight:700;">23%</td>
+            <td style="color:#1A6FDB; font-weight:700;">23~46%</td>
+            <td><span style="background:#e8f5e9; color:#2e7d32; border-radius:4px; padding:2px 6px; font-size:11px; font-weight:700;">충분히 가능</span></td>
+          </tr>
+          <tr>
+            <td>🤰 산부인과</td>
+            <td>약 6.0억</td>
+            <td>50~100만원</td>
+            <td style="color:#2e7d32; font-weight:700;">30%</td>
+            <td style="color:#1A6FDB; font-weight:700;">30~60%</td>
+            <td><span style="background:#e8f5e9; color:#2e7d32; border-radius:4px; padding:2px 6px; font-size:11px; font-weight:700;">충분히 가능</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- 시각화: 마케팅비 대비 아파트너 비중 -->
+      <h3 style="font-size:13px; font-weight:700; margin-bottom:12px; color:var(--primary);">📊 월 마케팅비 대비 아파트너 비중 시각화 (스탠다드 기준, 30만원)</h3>
+      <div class="dept-bar-wrap">
+        <div class="dept-bar-row">
+          <div class="dept-bar-name">치과</div>
+          <div class="dept-bar-track">
+            <div class="dept-bar-fill" style="width:100%; background:linear-gradient(90deg,#1A6FDB 25%, #e0e0ef 25%);">
+              <span style="position:absolute; left:0; top:50%; transform:translateY(-50%); color:#1A6FDB; font-size:10px; font-weight:800; left:8px; white-space:nowrap;">아파트너 30만원 (25%)</span>
+            </div>
+          </div>
+          <div class="dept-bar-meta">총 120만원</div>
+        </div>
+        <div class="dept-bar-row">
+          <div class="dept-bar-name">소아과</div>
+          <div class="dept-bar-track" style="position:relative;">
+            <div style="height:100%; width:100%; background:#e0e0ef; border-radius:20px; position:absolute;"></div>
+            <div style="height:100%; width:38%; background:linear-gradient(90deg,#1A6FDB,#5aa3f5); border-radius:20px; position:absolute; display:flex; align-items:center; padding-left:8px;">
+              <span style="font-size:10px; font-weight:800; color:white; white-space:nowrap;">38%</span>
+            </div>
+          </div>
+          <div class="dept-bar-meta">총 80만원</div>
+        </div>
+        <div class="dept-bar-row">
+          <div class="dept-bar-name">내과</div>
+          <div class="dept-bar-track" style="position:relative;">
+            <div style="height:100%; width:100%; background:#e0e0ef; border-radius:20px; position:absolute;"></div>
+            <div style="height:100%; width:33%; background:linear-gradient(90deg,#1A6FDB,#5aa3f5); border-radius:20px; position:absolute; display:flex; align-items:center; padding-left:8px;">
+              <span style="font-size:10px; font-weight:800; color:white; white-space:nowrap;">33%</span>
+            </div>
+          </div>
+          <div class="dept-bar-meta">총 90만원</div>
+        </div>
+        <div class="dept-bar-row">
+          <div class="dept-bar-name">피부과</div>
+          <div class="dept-bar-track" style="position:relative;">
+            <div style="height:100%; width:100%; background:#e0e0ef; border-radius:20px; position:absolute;"></div>
+            <div style="height:100%; width:21%; background:linear-gradient(90deg,#1A6FDB,#5aa3f5); border-radius:20px; position:absolute; display:flex; align-items:center; padding-left:8px;">
+              <span style="font-size:10px; font-weight:800; color:white; white-space:nowrap;">21%</span>
+            </div>
+          </div>
+          <div class="dept-bar-meta">총 140만원</div>
+        </div>
+        <div class="dept-bar-row">
+          <div class="dept-bar-name">한의원</div>
+          <div class="dept-bar-track" style="position:relative;">
+            <div style="height:100%; width:100%; background:#e0e0ef; border-radius:20px; position:absolute;"></div>
+            <div style="height:100%; width:40%; background:linear-gradient(90deg,#43a047,#76c442); border-radius:20px; position:absolute; display:flex; align-items:center; padding-left:8px;">
+              <span style="font-size:10px; font-weight:800; color:white; white-space:nowrap;">40%</span>
+            </div>
+          </div>
+          <div class="dept-bar-meta">총 75만원</div>
+        </div>
+      </div>
+
+      <div class="highlight-box" style="margin-top:16px;">
+        <strong>💡 핵심 메시지</strong><br>
+        아파트너 광고(월 15~50만원)는 진료과 불문 <strong>기존 월 마케팅비의 10~40% 수준</strong><br>
+        → "새로운 예산을 쓰는 게 아니라, 기존 마케팅비 내에서 채널만 추가하는 것"
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       6. CPC 비교
+  ══════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="num">6</div>
+      <h2>매체별 CPC 비교 — 아파트너의 압도적 우위</h2>
+    </div>
+    <div class="section-body">
+
+      <table style="margin-bottom:20px;">
+        <thead>
+          <tr>
+            <th>매체</th>
+            <th>평균 CPC</th>
+            <th>타깃 정밀도</th>
+            <th>지역 제한</th>
             <th>비고</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><span class="zone-badge zone-a">A존</span> 프리미엄</td>
-            <td>320×100</td>
-            <td><strong>50만원</strong></td>
-            <td>80만원</td>
-            <td>120만원</td>
-            <td>1일 4~5회 노출</td>
+            <td>🔍 네이버 검색</td>
+            <td style="color:#cc0000; font-weight:700;">3,000~8,000원</td>
+            <td>키워드 기반</td>
+            <td>약함</td>
+            <td>경쟁 입찰, 피부과·치과 특히 고가</td>
           </tr>
           <tr>
-            <td><span class="zone-badge zone-b">B존</span> 스탠다드</td>
-            <td>320×100</td>
-            <td><strong>30만원</strong></td>
-            <td>50만원</td>
-            <td>70만원</td>
-            <td>메인 피드</td>
+            <td>💛 카카오 디스플레이</td>
+            <td style="color:#e67e22; font-weight:700;">500~2,000원</td>
+            <td>관심사 기반</td>
+            <td>중간</td>
+            <td>단지 단위 타깃 불가</td>
           </tr>
           <tr>
-            <td><span class="zone-badge zone-c">C존</span> 라이트</td>
-            <td>320×80</td>
-            <td><strong>15만원</strong></td>
-            <td>25만원</td>
-            <td>35만원</td>
-            <td>커뮤니티 피드</td>
+            <td>📸 인스타그램 광고</td>
+            <td style="color:#e67e22; font-weight:700;">800~3,000원</td>
+            <td>관심사 기반</td>
+            <td>약함</td>
+            <td>광역 설정만 가능</td>
           </tr>
           <tr>
-            <td><span class="zone-badge zone-d">D존</span> 팝업</td>
-            <td>풀스크린</td>
-            <td><strong>40만원</strong></td>
-            <td>70만원</td>
-            <td>100만원</td>
-            <td>월 2회 제한</td>
+            <td>🛗 아파트 엘리베이터</td>
+            <td style="color:#888; font-weight:700;">CPM only</td>
+            <td>단지 한정</td>
+            <td>강함</td>
+            <td>클릭 액션 없음, 고정비 높음</td>
           </tr>
-        </tbody>
-      </table>
-
-      <!-- 패키지 -->
-      <h3 style="font-size:14px; font-weight:700; margin:24px 0 12px; color:var(--primary);">🎁 패키지 상품 (1,000세대 기준)</h3>
-      <div class="package-grid">
-        <div class="pkg-card">
-          <div class="pkg-header">베이직</div>
-          <div class="pkg-body">
-            <div class="pkg-price">30<span>만원/월</span></div>
-            <div style="height:18px;"></div>
-            <div class="pkg-includes">B존 1개월</div>
-          </div>
-        </div>
-        <div class="pkg-card highlight">
-          <div class="pkg-header">스탠다드</div>
-          <div class="pkg-body">
-            <div class="pkg-price">65<span>만원/월</span></div>
-            <div class="pkg-discount">19% 할인</div>
-            <div class="pkg-includes">A존 + B존<br>1개월</div>
-          </div>
-        </div>
-        <div class="pkg-card highlight">
-          <div class="pkg-header">프리미엄</div>
-          <div class="pkg-body">
-            <div class="pkg-price">80<span>만원/월</span></div>
-            <div class="pkg-discount">16% 할인</div>
-            <div class="pkg-includes">A존 + B존 + C존<br>1개월</div>
-          </div>
-        </div>
-        <div class="pkg-card">
-          <div class="pkg-header">VIP</div>
-          <div class="pkg-body">
-            <div class="pkg-price">110<span>만원/월</span></div>
-            <div class="pkg-discount">18% 할인</div>
-            <div class="pkg-includes">A+B+C+D존<br>1개월</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 기간 할인 -->
-      <h3 style="font-size:14px; font-weight:700; margin:24px 0 12px; color:var(--primary);">📅 기간 할인</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>계약 기간</th>
-            <th>할인율</th>
-            <th>예시 (베이직 30만원 기준)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1개월</td>
-            <td>정가</td>
-            <td>월 30만원 × 1 = <strong>30만원</strong></td>
-          </tr>
-          <tr>
-            <td>3개월</td>
-            <td style="color:#e67e22; font-weight:700;">10% 할인</td>
-            <td>월 27만원 × 3 = <strong>81만원</strong></td>
-          </tr>
-          <tr>
-            <td>6개월</td>
-            <td style="color:#e67e22; font-weight:700;">15% 할인</td>
-            <td>월 25.5만원 × 6 = <strong>153만원</strong></td>
-          </tr>
-          <tr>
-            <td>12개월</td>
-            <td style="color:#e74c3c; font-weight:700;">20% 할인</td>
-            <td>월 24만원 × 12 = <strong>288만원</strong></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <!-- ══════════════════════════════════════
-       5. 진료과별 광고 전략
-  ══════════════════════════════════════ -->
-  <div class="section">
-    <div class="section-header">
-      <div class="num">5</div>
-      <h2>진료과별 광고 전략</h2>
-    </div>
-    <div class="section-body">
-
-      <h3 style="font-size:14px; font-weight:700; margin-bottom:12px; color:var(--primary);">🏥 타깃 진료과 & 광고비 비교</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>진료과</th>
-            <th>입주민 수요</th>
-            <th>네이버 CPC 평균</th>
-            <th>아파트너 월 단가</th>
-            <th>핵심 강점</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>🍼 소아청소년과</td>
-            <td><span class="star">★★★★★</span></td>
-            <td>2,000~5,000원</td>
-            <td>30~50만원/월</td>
-            <td>자녀 있는 가구 직접 타깃</td>
-          </tr>
-          <tr>
-            <td>🦷 치과</td>
-            <td><span class="star">★★★★★</span></td>
-            <td>3,000~8,000원</td>
-            <td>30~50만원/월</td>
-            <td>가족 단위 수요, 정기검진</td>
-          </tr>
-          <tr>
-            <td>💊 내과</td>
-            <td><span class="star">★★★★</span><span class="star-empty">★</span></td>
-            <td>1,500~3,000원</td>
-            <td>30~50만원/월</td>
-            <td>건강검진, 만성질환</td>
-          </tr>
-          <tr>
-            <td>✨ 피부과</td>
-            <td><span class="star">★★★★</span><span class="star-empty">★</span></td>
-            <td><strong style="color:#cc0000;">5,000~15,000원</strong></td>
-            <td>30~50만원/월</td>
-            <td>CPC 대비 극도로 저렴</td>
-          </tr>
-          <tr>
-            <td>🦴 정형외과</td>
-            <td><span class="star">★★★</span><span class="star-empty">★★</span></td>
-            <td>2,000~5,000원</td>
-            <td>30~50만원/월</td>
-            <td>중장년 수요</td>
-          </tr>
-          <tr>
-            <td>🌿 한의원</td>
-            <td><span class="star">★★★★</span><span class="star-empty">★</span></td>
-            <td>2,000~4,000원</td>
-            <td>30~50만원/월</td>
-            <td>지역 밀착형</td>
-          </tr>
-          <tr>
-            <td>👁️ 안과</td>
-            <td><span class="star">★★★</span><span class="star-empty">★★</span></td>
-            <td>3,000~7,000원</td>
-            <td>30~50만원/월</td>
-            <td>시력교정, 노안</td>
-          </tr>
-          <tr>
-            <td>🤰 산부인과</td>
-            <td><span class="star">★★★</span><span class="star-empty">★★</span></td>
-            <td>3,000~6,000원</td>
-            <td>30~50만원/월</td>
-            <td>신혼·출산 가구</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="highlight-box" style="margin-top:16px;">
-        <strong>💡 병원 광고 월 예산 평균 (업계 기준)</strong><br>
-        • 동네 의원: 월 <strong>100~300만원</strong> (마케팅비 전체)<br>
-        • 중형 병원: 월 <strong>300~1,000만원</strong><br>
-        • 아파트너 단가(30~50만원)는 전체 예산의 <strong>10~30% 수준</strong> → 부담 없는 추가 채널로 포지셔닝
-      </div>
-    </div>
-  </div>
-
-  <!-- ══════════════════════════════════════
-       6. 광고 효과 예측
-  ══════════════════════════════════════ -->
-  <div class="section">
-    <div class="section-header">
-      <div class="num">6</div>
-      <h2>광고 효과 예측 (1,000세대 기준)</h2>
-    </div>
-    <div class="section-body">
-
-      <table>
-        <thead>
-          <tr>
-            <th>지표</th>
-            <th><span class="zone-badge zone-a">A존</span> 프리미엄</th>
-            <th><span class="zone-badge zone-b">B존</span> 스탠다드</th>
-            <th><span class="zone-badge zone-c">C존</span> 라이트</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>월 노출수</td>
-            <td><strong>약 120,000회</strong></td>
-            <td>약 80,000회</td>
-            <td>약 40,000회</td>
-          </tr>
-          <tr>
-            <td>예상 CTR</td>
-            <td>0.8~1.5%</td>
-            <td>0.5~1.0%</td>
-            <td>0.3~0.7%</td>
-          </tr>
-          <tr>
-            <td>월 클릭수</td>
-            <td><strong>960~1,800회</strong></td>
-            <td>400~800회</td>
-            <td>120~280회</td>
-          </tr>
-          <tr>
-            <td>CPM 환산</td>
-            <td>약 4,200원</td>
-            <td>약 3,750원</td>
-            <td>약 3,750원</td>
-          </tr>
-          <tr>
-            <td>CPC 환산</td>
-            <td style="color:#1A6FDB; font-weight:700;">약 280~520원</td>
-            <td style="color:#1A6FDB; font-weight:700;">약 375~750원</td>
-            <td style="color:#1A6FDB; font-weight:700;">약 540~1,250원</td>
+          <tr style="background:#e8f1fd;">
+            <td style="color:var(--primary); font-weight:800;">🏠 아파트너 배너</td>
+            <td style="color:var(--primary); font-weight:800; font-size:15px;">150~500원</td>
+            <td style="color:var(--primary); font-weight:700;">세대 단위</td>
+            <td style="color:var(--primary); font-weight:700;">가장 강함</td>
+            <td style="color:var(--primary); font-weight:600;">반경 1km 입주민만 정밀 타깃</td>
           </tr>
         </tbody>
       </table>
 
       <!-- CPC 비교 바 -->
-      <h3 style="font-size:13px; font-weight:700; margin:20px 0 10px; color:var(--primary);">📉 CPC 비교 — 아파트너 vs 네이버</h3>
+      <h3 style="font-size:13px; font-weight:700; margin:20px 0 12px; color:var(--primary);">📉 CPC 시각화 비교 (단위: 원)</h3>
       <div class="compare-bar-wrap">
         <div class="compare-bar-item">
           <div class="compare-bar-label">피부과 네이버</div>
@@ -1323,114 +1672,279 @@
           <div class="compare-bar-val" style="color:#e67e22;">~8,000원</div>
         </div>
         <div class="compare-bar-item">
-          <div class="compare-bar-label">소아과 네이버</div>
+          <div class="compare-bar-label">카카오 디스플레이</div>
           <div class="compare-bar-track">
-            <div class="compare-bar-fill" style="width:33%; background:linear-gradient(90deg,#ffa502,#ffd32a);"></div>
+            <div class="compare-bar-fill" style="width:13%; background:linear-gradient(90deg,#ffa502,#ffd32a);"></div>
           </div>
-          <div class="compare-bar-val" style="color:#c67c00;">~5,000원</div>
+          <div class="compare-bar-val" style="color:#c67c00;">~2,000원</div>
         </div>
         <div class="compare-bar-item">
-          <div class="compare-bar-label" style="color:#1A6FDB; font-weight:800;">A존 아파트너</div>
+          <div class="compare-bar-label" style="color:#1A6FDB; font-weight:800;">아파트너 스탠다드</div>
           <div class="compare-bar-track">
-            <div class="compare-bar-fill" style="width:5%; background:linear-gradient(90deg,#1A6FDB,#7EC8FF);"></div>
+            <div class="compare-bar-fill" style="width:3%; background:linear-gradient(90deg,#1A6FDB,#7EC8FF); min-width:20px;"></div>
           </div>
-          <div class="compare-bar-val" style="color:#1A6FDB; font-weight:800;">280~520원</div>
+          <div class="compare-bar-val" style="color:#1A6FDB; font-weight:800;">150~500원 🏆</div>
         </div>
       </div>
 
       <div class="accent-box">
-        🎯 <strong>네이버 CPC(2,000~8,000원) 대비 1/5~1/10 수준</strong><br>
-        동일 지역·단지 정밀 타깃팅은 다른 매체에서 불가능 — 아파트너만의 독보적 경쟁력
+        🎯 <strong>네이버 CPC(3,000~8,000원) 대비 1/6~1/50 수준</strong><br>
+        단지 반경 1km 입주민만 정밀 타깃 — 이런 타깃팅은 다른 매체에서 구현 불가능
       </div>
     </div>
   </div>
 
   <!-- ══════════════════════════════════════
-       7. 병원 영업 가이드
+       7. ROI 시뮬레이션
   ══════════════════════════════════════ -->
   <div class="section">
     <div class="section-header">
       <div class="num">7</div>
-      <h2>병원 영업 가이드</h2>
+      <h2>ROI 시뮬레이션 — 스탠다드 패키지 기준 (월 30만원)</h2>
     </div>
     <div class="section-body">
 
-      <!-- 접근 대상 -->
-      <h3 style="font-size:14px; font-weight:700; margin-bottom:10px; color:var(--primary);">🎯 접근 대상</h3>
-      <ul class="info-list" style="margin-bottom:20px;">
-        <li>단지 <strong>반경 1km 이내</strong> 병원 (도보 10분 권역)</li>
-        <li>우선 타깃: <strong>소아과, 치과, 내과, 피부과, 한의원</strong></li>
-        <li>2차 타깃: 정형외과, 안과, 산부인과</li>
-      </ul>
-
-      <!-- 영업 포인트 -->
-      <h3 style="font-size:14px; font-weight:700; margin-bottom:10px; color:var(--primary);">💬 영업 포인트 (원장 면담 시 강조)</h3>
-      <div class="sales-points" style="margin-bottom:20px;">
-        <div class="sales-point">
-          <div class="sp-num">1</div>
-          <div class="sp-text">"단지 입주민 70~85%가 매일 사용하는 앱"</div>
+      <!-- 플로우 -->
+      <div class="roi-flow">
+        <div class="roi-step">
+          <div class="rs-val">월 30만원</div>
+          <div class="rs-label">광고 집행 비용</div>
         </div>
-        <div class="sales-point">
-          <div class="sp-num">2</div>
-          <div class="sp-text">"네이버 광고 대비 CPC 1/5 수준"</div>
+        <div class="roi-step">
+          <div class="rs-val">1,400회</div>
+          <div class="rs-label">월 예상 클릭<br>(CPC 214원)</div>
         </div>
-        <div class="sales-point">
-          <div class="sp-num">3</div>
-          <div class="sp-text">"30~50대 가구주에 딱 맞는 정밀 타깃팅"</div>
+        <div class="roi-step">
+          <div class="rs-val">3~5%</div>
+          <div class="rs-label">클릭→내원<br>전환율</div>
         </div>
-        <div class="sales-point">
-          <div class="sp-num">4</div>
-          <div class="sp-text">"3개월 패키지 10% 할인 혜택"</div>
+        <div class="roi-step">
+          <div class="rs-val">42~70명</div>
+          <div class="rs-label">월 신규 내원</div>
         </div>
-        <div class="sales-point">
-          <div class="sp-num">5</div>
-          <div class="sp-text">"광고 성과 리포트 월 1회 제공 (노출수·클릭수·CTR)"</div>
+        <div class="roi-step highlight-step">
+          <div class="rs-val">700~3,500%</div>
+          <div class="rs-label">ROAS 🚀</div>
         </div>
       </div>
 
-      <!-- 영업 프로세스 -->
-      <h3 style="font-size:14px; font-weight:700; margin-bottom:14px; color:var(--primary);">🔄 영업 프로세스</h3>
+      <table style="margin-top:16px; margin-bottom:16px;">
+        <thead>
+          <tr>
+            <th>지표</th>
+            <th>수치</th>
+            <th>산출 근거</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>월 광고 비용</td>
+            <td><strong>30만원</strong></td>
+            <td>스탠다드 패키지 기본가</td>
+          </tr>
+          <tr>
+            <td>월 예상 클릭</td>
+            <td><strong>1,400회</strong></td>
+            <td>A+B존 노출 200,000회 × CTR 0.7%</td>
+          </tr>
+          <tr>
+            <td>평균 CPC</td>
+            <td style="color:var(--primary); font-weight:700;">약 214원</td>
+            <td>30만원 ÷ 1,400회</td>
+          </tr>
+          <tr>
+            <td>클릭→내원 전환율</td>
+            <td><strong>3~5%</strong></td>
+            <td>지역 병원 평균 (원거리 이탈 없음)</td>
+          </tr>
+          <tr>
+            <td>월 신규 내원</td>
+            <td><strong>42~70명</strong></td>
+            <td>1,400회 × 3~5%</td>
+          </tr>
+          <tr>
+            <td>내원당 평균 진료비</td>
+            <td><strong>5~15만원</strong></td>
+            <td>진료과별 평균 (초진 기준)</td>
+          </tr>
+          <tr>
+            <td>월 예상 매출 기여</td>
+            <td><strong>210~1,050만원</strong></td>
+            <td>42~70명 × 5~15만원</td>
+          </tr>
+          <tr style="background:#e8f1fd;">
+            <td style="color:var(--primary); font-weight:800;">ROAS</td>
+            <td style="color:var(--primary); font-weight:800; font-size:16px;">700~3,500%</td>
+            <td style="color:var(--primary);">매출 기여 ÷ 광고비 × 100</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="highlight-box">
+        <strong>📌 보수적 시나리오 기준 (전환율 3%, 내원 42명, 진료비 5만원)</strong><br>
+        월 매출 기여 <strong>210만원</strong>, 광고비 30만원 → ROAS <strong>700%</strong><br>
+        → 광고비 1원당 7원의 매출을 만드는 채널
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       8. 입주민 혜택 구조
+  ══════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="num">8</div>
+      <h2>입주민 혜택 — "우리 단지 전용 제휴 병원" 구조</h2>
+    </div>
+    <div class="section-body">
+
+      <p style="font-size:13.5px; color:var(--text-sub); margin-bottom:16px;">
+        아파트너 광고 집행 병원은 단순 배너 노출 외에 <strong style="color:var(--text);">입주민 전용 혜택</strong>을 제공하여 브랜드 신뢰도를 높이고 재방문율을 올릴 수 있습니다.
+      </p>
+
+      <div class="benefit-grid">
+
+        <div class="benefit-card badge-card">
+          <h4>🏅 우리단지 제휴병원 뱃지</h4>
+          <p>
+            앱 내 병원 리스트 및 배너에 <strong>「서울숲 아이파크리버포레1차 제휴 병원」</strong> 공식 뱃지가 부착됩니다.<br><br>
+            입주민에게 "우리 단지가 인증한 병원"이라는 신뢰감을 제공하며, 첫 방문 결정을 빠르게 유도합니다.
+          </p>
+        </div>
+
+        <div class="benefit-card coupon-card">
+          <h4>🎟️ 입주민 전용 할인쿠폰</h4>
+          <p>
+            앱 내 쿠폰 탭에서 입주민만 다운로드 가능한 전용 할인쿠폰 제공:<br><br>
+            • 초진료 <strong>10% 할인</strong><br>
+            • 건강검진 <strong>20% 할인</strong><br>
+            • 패키지별 1~3종 쿠폰 제공<br><br>
+            쿠폰 사용률 = 실질 내원 전환 데이터로도 활용 가능합니다.
+          </p>
+        </div>
+
+        <div class="benefit-card tab-card">
+          <h4>🏥 앱 내 "제휴 병원" 전용 탭</h4>
+          <p>
+            아파트너 앱 메인 메뉴에 <strong>「우리 단지 제휴 병원」 탭</strong>이 별도 노출됩니다.<br><br>
+            배너 광고 외 추가 노출 채널 — 입주민이 병원을 찾을 때 가장 먼저 확인하는 위치에 등록됩니다.
+          </p>
+        </div>
+
+        <div class="benefit-card review-card">
+          <h4>💬 입주민 후기 게시판 연동</h4>
+          <p>
+            단지 커뮤니티 게시판에 제휴 병원 전용 후기 스레드가 생성됩니다.<br><br>
+            입주민 간 <strong>실사용 후기가 자연스럽게 축적</strong>되어 구전 마케팅 효과를 극대화합니다.<br>
+            (부정 후기 발생 시 관리 가이드 별도 제공)
+          </p>
+        </div>
+
+      </div>
+
+      <div class="gold-box" style="margin-top:16px;">
+        <strong>🌟 "광고"가 아니라 "파트너십"으로 포지셔닝</strong><br>
+        단순 배너 노출이 아닌 제휴 뱃지 + 할인쿠폰 + 전용탭 + 후기 연동의 <strong>통합 입주민 혜택 패키지</strong><br>
+        → 병원 원장에게는 "지역 주민 신뢰 구축 인프라"로 제안 가능
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       9. 영업 프로세스
+  ══════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="num">9</div>
+      <h2>영업 프로세스 — 접근부터 런칭까지</h2>
+    </div>
+    <div class="section-body">
+
+      <h3 style="font-size:14px; font-weight:700; margin-bottom:12px; color:var(--primary);">🎯 접근 우선순위</h3>
+      <ul class="info-list" style="margin-bottom:20px;">
+        <li><strong>1순위:</strong> 소아과·치과·내과 — 어린 자녀 가정 多인 단지 특성과 직접 매칭</li>
+        <li><strong>2순위:</strong> 피부과·한의원 — 맞벌이 30~40대 여성 수요 높음</li>
+        <li><strong>3순위:</strong> 정형외과·안과·산부인과 — 40~50대 가구주 수요</li>
+        <li>단지 <strong>반경 1km 이내</strong> 병원 우선 (도보 10분 권역)</li>
+      </ul>
+
+      <h3 style="font-size:14px; font-weight:700; margin-bottom:12px; color:var(--primary);">💬 영업 핵심 포인트 (원장 면담 시)</h3>
+      <div class="sales-points" style="margin-bottom:24px;">
+        <div class="sales-point">
+          <div class="sp-num">1</div>
+          <div class="sp-text">"이 단지 852세대가 매일 여는 앱에만 노출"</div>
+        </div>
+        <div class="sales-point">
+          <div class="sp-num">2</div>
+          <div class="sp-text">"CPC 214원 — 네이버 대비 1/14 수준"</div>
+        </div>
+        <div class="sales-point">
+          <div class="sp-num">3</div>
+          <div class="sp-text">"기존 마케팅비의 10~40% 수준, 추가 채널"</div>
+        </div>
+        <div class="sales-point">
+          <div class="sp-num">4</div>
+          <div class="sp-text">"제휴 뱃지·할인쿠폰으로 입주민 첫 방문 유도"</div>
+        </div>
+        <div class="sales-point">
+          <div class="sp-num">5</div>
+          <div class="sp-text">"스탠다드 기준 ROAS 700~3,500% 시뮬레이션"</div>
+        </div>
+        <div class="sales-point">
+          <div class="sp-num">6</div>
+          <div class="sp-text">"월 성과 리포트로 광고 효과 투명하게 공유"</div>
+        </div>
+      </div>
+
+      <h3 style="font-size:14px; font-weight:700; margin-bottom:14px; color:var(--primary);">🔄 영업 단계</h3>
       <div class="process-steps">
         <div class="process-step">
           <div class="step-num">1</div>
           <div class="step-content">
             <strong>병원 리스트업</strong>
-            <p>단지 반경 1km 병원 리스트 작성 (네이버 지도 활용)</p>
+            <p>단지 반경 1km 병원 리스트 작성 (네이버 지도 활용) · 진료과별 우선순위 정렬</p>
           </div>
         </div>
         <div class="process-step">
           <div class="step-num">2</div>
           <div class="step-content">
             <strong>방문·전화 아웃리치</strong>
-            <p>원장 직접 면담 요청, 5분 PT 준비</p>
+            <p>원장 직접 면담 요청, 본 가이드 인쇄본 + 단지 통계 자료 준비</p>
           </div>
         </div>
         <div class="process-step">
           <div class="step-num">3</div>
           <div class="step-content">
-            <strong>가이드 전달 + 데모그래픽 설명</strong>
-            <p>본 문서 인쇄 배포, 단지 세대 구성 데이터 시각화 제시</p>
+            <strong>단지 프로필 제시 + ROI 시뮬레이션 설명</strong>
+            <p>852세대 앱 설치, DAU 310명, CPC 214원, ROAS 700~3,500% 수치 중심 PT (5분)</p>
           </div>
         </div>
         <div class="process-step">
           <div class="step-num">4</div>
           <div class="step-content">
-            <strong>3개월 베이직 패키지 추천</strong>
-            <p>월 30만원 × 3개월 = 총 81만원 (10% 할인 적용)</p>
+            <strong>상품 B (스탠다드) 추천 + 계약</strong>
+            <p>3개월 81만원 (10% 할인) · 입주민 혜택 패키지 동시 안내 · 계약서 작성</p>
           </div>
         </div>
         <div class="process-step">
           <div class="step-num">5</div>
           <div class="step-content">
             <strong>배너 디자인 제작 지원</strong>
-            <p>기본 템플릿 제공, 병원 로고·정보 삽입 지원</p>
+            <p>기본 템플릿 제공 (320×100 / 320×80) · 병원 로고·진료과·CTA 삽입 · 검수 후 업로드</p>
           </div>
         </div>
         <div class="process-step">
           <div class="step-num">6</div>
           <div class="step-content">
-            <strong>월 1회 성과 리포트 발송</strong>
-            <p>노출수·클릭수·CTR 리포트로 지속 계약 유도</p>
+            <strong>광고 런칭 + 쿠폰·제휴뱃지 설정</strong>
+            <p>배너 업로드 완료 + 앱 내 제휴병원 탭 등록 + 할인쿠폰 발행 설정</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">7</div>
+          <div class="step-content">
+            <strong>월 성과 리포트 발송 + 재계약 유도</strong>
+            <p>노출수·클릭수·CTR·쿠폰 사용률 리포트 공유 → 3개월 후 프리미엄 업그레이드 제안</p>
           </div>
         </div>
       </div>
@@ -1438,49 +1952,48 @@
   </div>
 
   <!-- ══════════════════════════════════════
-       8. 배너 디자인 가이드라인
+       10. 배너 가이드라인
   ══════════════════════════════════════ -->
   <div class="section">
     <div class="section-header">
-      <div class="num">8</div>
+      <div class="num">10</div>
       <h2>배너 디자인 가이드라인</h2>
     </div>
     <div class="section-body">
 
-      <!-- 배너 샘플 -->
-      <h3 style="font-size:14px; font-weight:700; margin-bottom:12px; color:var(--primary);">🖼️ 배너 샘플 (예시)</h3>
+      <h3 style="font-size:14px; font-weight:700; margin-bottom:12px; color:var(--primary);">🖼️ 배너 샘플 예시</h3>
 
       <div class="banner-preview">
         <div class="banner-sample">
-          <div class="banner-sample-label">A존·B존 — 320×100px</div>
+          <div class="banner-sample-label">A존·B존 — 320×100px (스탠다드/프리미엄 패키지)</div>
           <div class="banner-320-100">
             <div class="banner-content">
-              <div class="bn-name">○○소아청소년과</div>
-              <div class="bn-spec">📍 단지 도보 5분 · ☎ 02-1234-5678</div>
+              <div class="bn-name">서울숲 ○○소아청소년과</div>
+              <div class="bn-spec">📍 단지 도보 5분 · ☎ 02-1234-5678<br>🎟️ 입주민 초진 10% 할인 쿠폰</div>
             </div>
             <div class="banner-cta">예약하기</div>
           </div>
         </div>
 
         <div class="banner-sample">
-          <div class="banner-sample-label">C존 — 320×80px</div>
+          <div class="banner-sample-label">C존 — 320×80px (프리미엄 패키지)</div>
           <div class="banner-320-80">
             <div class="banner-content">
-              <div class="bn-name">△△치과의원</div>
-              <div class="bn-spec">📍 단지 도보 3분 · 가족 정기검진 상담</div>
+              <div class="bn-name">서울숲 △△치과의원</div>
+              <div class="bn-spec">📍 단지 도보 3분 · 가족 정기검진 20% 할인</div>
             </div>
             <div class="banner-cta" style="color:#2e7d32;">전화하기</div>
           </div>
         </div>
       </div>
 
-      <!-- 가이드 규칙 -->
       <div class="guide-grid" style="margin-top:20px;">
         <div class="guide-item format">
           <h4>📐 제작 규격</h4>
           <ul>
             <li>A·B존: 320×100px</li>
             <li>C존: 320×80px</li>
+            <li>D존: 풀스크린 (별도 협의)</li>
             <li>포맷: PNG / JPG</li>
             <li>용량: 최대 150KB</li>
           </ul>
@@ -1492,6 +2005,7 @@
             <li>진료과목</li>
             <li>연락처 또는 위치</li>
             <li>CTA (예약하기·전화하기)</li>
+            <li>입주민 혜택 문구 (쿠폰 있을 시)</li>
           </ul>
         </div>
         <div class="guide-item forbidden">
@@ -1501,6 +2015,7 @@
             <li>의료법 위반 표현</li>
             <li>환자 사례 직접 인용</li>
             <li>오해를 유발하는 수치</li>
+            <li>타 병원 비방 문구</li>
           </ul>
         </div>
         <div class="guide-item recommended">
@@ -1510,6 +2025,7 @@
             <li>가독성 높은 폰트</li>
             <li>병원 로고 삽입</li>
             <li>단지 근접성 강조</li>
+            <li>"입주민 전용" 문구 활용</li>
           </ul>
         </div>
       </div>
@@ -1519,9 +2035,10 @@
   <!-- 푸터 -->
   <footer>
     <div style="margin-bottom:6px;">
-      <strong style="color:var(--primary);">두꺼비세상 AX팀</strong> | 아파트너 광고 영업 제안서 | 2026.04
+      <strong style="color:var(--primary);">두꺼비세상 AX팀</strong> | 아파트너 병원 광고 가이드 v2.0 | 서울숲 아이파크리버포레1차 맞춤 | 2026.04
     </div>
-    <div>본 문서의 수치는 예측값이며, 실제 성과는 단지 특성에 따라 달라질 수 있습니다.</div>
+    <div style="margin-bottom:4px;">본 문서의 수치(활성도·ROAS·CTR 등)는 단지 데이터 기반 추정값이며 실제 성과는 단지 특성에 따라 달라질 수 있습니다.</div>
+    <div>문의: 두꺼비세상 AX팀 광고영업 담당자</div>
   </footer>
 
 </div>
